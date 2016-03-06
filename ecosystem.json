@@ -2,14 +2,13 @@
 
     "apps": [
         {
-            "name": "boiler",
+            "name": "Regal-Kitchens",
             "script": "bin/www",
             "node_args": "--harmony",
             "instances": 4,
             "exec_mode"  : "cluster_mode",
             "error_file": "logs/pm2/err/err.log",
             "out_file": "logs/pm2/out/out.log",
-            "out_file": "logs/pm2/out/out-env.log",
             "merge-logs": true,
             "autorestart": true,
             "env_production": {
@@ -20,20 +19,14 @@
 
     "deploy": {
         "production": {
-            "user": "username",
-            "host": "0.0.0.0",
+            "key": "~/.ssh/regalkitchens.pem",
+            "user": "ubuntu",
+            "host": "52.35.14.104",
             "ref": "origin/master",
-            "repo": "git@github.com:jayoharedee/express-boiler.git",
-            "path": " /var/www/boiler",
-            "post-deploy": "sudo npm install && sudo pm2 startOrRestart ecosystem.json --env production"
-        },
-        "development": {
-            "user": "dev",
-            "host": "0.0.0.0",
-            "ref": "origin/master",
-            "repo": "git@github.com:jayoharedee/express-boiler.git",
-            "path": " /Users/dev/dev/express-boiler",
+            "repo": "git@github.com:oskar1t/Regal-Kitchens.git",
+            "path": " /var/www/Regal-Kitchens",
             "post-deploy": "sudo npm install && sudo pm2 startOrRestart ecosystem.json --env production"
         }
+
     }
 }
