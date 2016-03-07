@@ -19,7 +19,7 @@
 
     "deploy": {
         "production": {
-            "key": "~/.ssh/regalkitchens.pem",
+            "key": "/Users/dev/.ssh/regalkitchens.pem",
             "user": "ubuntu",
             "host": "52.35.14.104",
             "ref": "origin/master",
